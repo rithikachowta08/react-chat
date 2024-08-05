@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# React Realtime Chat
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> One to one chat component built using Firebase's realtime database. This component can be used to intialize a chat window for a user who is logged in to your application, with another user of your application.
 
-## Available Scripts
+![Chat GIF](https://i.imgur.com/VrV3unZ.gif)
 
-In the project directory, you can run:
+## Requirements
 
-### `npm start`
+A login and signup flow must already be implemented in your application. This component must be rendered only on pages where your user has already logged in. It is assumed that information regarding the receiver of the messages is already known at the time of invoking this component.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+`npm install --save react-realtime-chat`
 
-### `npm test`
+## Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Create an app on firebase and copy the configuration object to be passed as props to the chat component.
 
-### `npm run build`
+```jsx harmony
+<Chat
+  config={{
+    apiKey: "dummy-key",
+    authDomain: "chat-775a1.firebaseapp.com",
+    databaseURL: "https://chat-775a1.firebaseio.com",
+    projectId: "chat-775a1",
+    storageBucket: "chat-775a1.appspot.com",
+    messagingSenderId: "24901292295",
+    appId: "1:249012927295:web:0f77d4",
+  }}
+  currentUserId="45878"
+  receiver={{
+    name: "Rithika",
+    id: "129090",
+    imageUrl:
+      "https://miro.medium.com/fit/c/256/256/2*XRuD351hKGF-w6TdhF0wVw.jpeg",
+  }}
+  height="500px"
+  themeColor="#3C5A99"
+  textColor="#fff"
+/>
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Options
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![alt text](https://i.imgur.com/3a8HOmu.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Links and examples
 
-### `npm run eject`
+- Full example on Github: [Example](https://github.com/rithikachowta08/react-realtime-chat/tree/master/src).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Live working demo: [Demo](https://afternoon-wildwood-14794.herokuapp.com/).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Tutorial on how this package was implemented : [Medium article](https://medium.com/@rithikachowta/building-a-real-time-chat-application-with-react-firebase-and-redux-saga-9cbbdbc34720?postPublishedType=initial).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## License
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+react-realtime-chat is released under [MIT License](https://opensource.org/licenses/MIT).
