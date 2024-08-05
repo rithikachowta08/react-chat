@@ -120,10 +120,10 @@ class Chat extends Component {
 
   render() {
     const { error, isFetching, messages } = this.props.chat;
-    const { loader, sendIcon } = this.props;
+    const { loader, sendIcon, className } = this.props;
     return (
       <Provider store={store}>
-        <div className="chat-section" style={this.chatStyle}>
+        <div className={`${className} chat-section`} style={this.chatStyle}>
           {error && <div className="error">Oops! Something went wrong!</div>}
           {isFetching && (
             <div className="centered-container">
@@ -162,9 +162,11 @@ Chat.propTypes = {
   textColor: PropTypes.string,
   sendIcon: PropTypes.string,
   loader: PropTypes.string,
+  className: PropTypes.string,
 };
 
 Chat.defaultProps = {
+  className: "",
   height: "100%",
   width: "100%",
   themeColor: "#3cb3dd",

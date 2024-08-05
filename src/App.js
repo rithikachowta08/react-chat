@@ -56,7 +56,8 @@ const App = () => {
         }}
         currentUserId={currentUserId}
         receiver={getReceiver()}
-        height="500px"
+        height="80%"
+        className="chat-container"
         themeColor="#3C5A99"
         textColor="#fff"
       />
