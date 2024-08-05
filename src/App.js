@@ -44,15 +44,14 @@ const App = () => {
     <div className="App">
       <Chat
         config={{
-          apiKey: "AIzaSyBKFmiqnOV8NKgyfVAPKeOS-71feMSnTQs",
-          authDomain: "chat-app-d8f49.firebaseapp.com",
-          projectId: "chat-app-d8f49",
-          storageBucket: "chat-app-d8f49.appspot.com",
-          messagingSenderId: "634280749305",
-          appId: "1:634280749305:web:5dfcf4434d95ba77fa1a28",
-          measurementId: "G-ECYCEBJM1W",
-          databaseURL:
-            "https://chat-app-d8f49-default-rtdb.asia-southeast1.firebasedatabase.app",
+          apiKey: process.env.REACT_APP_API_KEY,
+          authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+          projectId: process.env.REACT_APP_PROJECT_ID,
+          storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+          messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+          appId: process.env.REACT_APP_APP_ID,
+          measurementId: process.env.REACT_APP_MEASUREMENT_ID,
+          databaseURL: process.env.REACT_APP_DATABASE_URL,
         }}
         currentUserId={currentUserId}
         receiver={getReceiver()}

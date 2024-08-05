@@ -47,7 +47,6 @@ const setMessageProps = (message, id, receiver, currentUserId) => {
   }
   newMessage.avatarUrl = receiver.imageUrl;
   newMessage.unixTime = message.timestamp;
-  console.log("message", message);
   newMessage.timeStamp = getTimeFromUnixTime(message.timestamp);
   return newMessage;
 };
