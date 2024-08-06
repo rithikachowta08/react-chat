@@ -2,6 +2,8 @@
 
 > One to one chat component built using Firebase's realtime database. This component can be used to intialize a chat window for a user who is logged in to your application, with another user of your application. The messages are stored and read from Firebase RTDB. A firebase config must be passed for the component to work.
 
+<br/>
+
 ![Chat GIF](https://i.imgur.com/VrV3unZ.gif)
 
 ## Requirements
@@ -15,6 +17,8 @@ A login and signup flow must already be implemented in your application. This co
 ## Usage
 
 - Create an app on firebase and copy the configuration object to be passed as props to the chat component.
+
+<br/>
 
 ```jsx harmony
 <Chat
@@ -58,6 +62,7 @@ A login and signup flow must already be implemented in your application. This co
 | messageBubbleClass                                | `string`                    | className for the message bubble component
 | darkMode                                | `boolean`                    | Boolean value to enable/disable dark mode
 
+<br/>
 
 ## Links and examples
 
