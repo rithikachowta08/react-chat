@@ -1,15 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const MyMessageBody = props => (
-  <div className="chat-body self" style={props.style}>
+const MyMessageBody = (props) => (
+  <div className={`${props.className} chat-body self`} style={props.style}>
     {props.messageText}
   </div>
 );
 
 MyMessageBody.propTypes = {
   messageText: PropTypes.string.isRequired,
-  style: PropTypes.object
+  style: PropTypes.object,
 };
 
 export default MyMessageBody;

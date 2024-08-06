@@ -25,9 +25,6 @@ const userRoles = {
 const App = () => {
   // Function to switch current user i.e "you" in the chat and reload the chat in the new role
   const currentUserId = localStorage.getItem("currentUserId") || user1.id;
-  // if (currentUserId !== user1.id || currentUserId !== user2.id) {
-  //   localStorage.removeItem("currentUserId");
-  // }
   const switchRoles = () => {
     if (currentUserId === user1.id) {
       localStorage.setItem("currentUserId", user2.id.toString());
@@ -55,10 +52,10 @@ const App = () => {
         }}
         currentUserId={currentUserId}
         receiver={getReceiver()}
-        height="80%"
         className="chat-container"
-        themeColor="#3C5A99"
+        themeColor="#192586"
         textColor="#fff"
+        darkMode
       />
       <span>You are currently in the role of: {userRoles[currentUserId]}</span>
       <button className="btn" onClick={switchRoles}>

@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import ChatMessage from './ChatMessage/ChatMessage';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import ChatMessage from "./ChatMessage/ChatMessage";
 
 class ChatBody extends Component {
   // Auto scroll chat to bottom whenever messages prop changes
   componentDidUpdate(prevProps) {
-    const elem = document.querySelector('.chat-messages-container');
+    const elem = document.querySelector(".chat-messages-container");
     if (
       elem &&
       JSON.stringify(prevProps.messages) !== JSON.stringify(this.props.messages)
@@ -15,12 +15,17 @@ class ChatBody extends Component {
   }
 
   render() {
-    const { messages, style } = this.props;
+    const { messages, messageBubbleClass, style } = this.props;
     return (
       <div className="chat-messages-container">
         {messages &&
           messages.map((message, index) => (
-            <ChatMessage key={index} style={style} {...message} />
+            <ChatMessage
+              messageBubbleClass={messageBubbleClass}
+              key={index}
+              style={style}
+              {...message}
+            />
           ))}
       </div>
     );
@@ -29,12 +34,14 @@ class ChatBody extends Component {
 
 ChatBody.propTypes = {
   messages: PropTypes.array,
-  style: PropTypes.object
+  style: PropTypes.object,
+  messageBubbleClass: PropTypes.string,
 };
 
 ChatBody.defaultProps = {
   messages: [],
-  style: {}
+  style: {},
+  messageBubbleClass: "",
 };
 
 export default ChatBody;

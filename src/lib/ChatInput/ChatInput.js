@@ -8,7 +8,7 @@ const ChatInput = (props) => {
       <input
         id="chatInput"
         type="text"
-        className="chat-input"
+        className={`${props.className} chat-input`}
         value={props.value || ""}
         onChange={props.changeHandler}
         onKeyPress={props.enterKeyHandler}
@@ -18,7 +18,7 @@ const ChatInput = (props) => {
       <img
         className="chat-icon"
         src={props.icon}
-        alt="send icon"
+        alt="Send message icon"
         onClick={props.clickHandler}
       />
     </div>

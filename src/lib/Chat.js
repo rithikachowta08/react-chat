@@ -42,10 +42,7 @@ class Chat extends Component {
     this.state = {
       currentMessage: "",
     };
-    this.chatStyle = {
-      height: props.height,
-      width: props.width,
-    };
+
     this.customStyle = {
       backgroundColor: props.themeColor,
       borderColor: `${props.themeColor} ${
@@ -120,10 +117,10 @@ class Chat extends Component {
 
   render() {
     const { error, isFetching, messages } = this.props.chat;
-    const { loader, sendIcon, className } = this.props;
+    const { loader, sendIcon, containerClass, inputClass, messageBubbleClass } = this.props;
     return (
       <Provider store={store}>
-        <div className={`${className} chat-section`} style={this.chatStyle}>
+        <div className={`${containerClass} chat-section`} style={this.chatStyle}>
           {error && <div className="error">Oops! Something went wrong!</div>}
           {isFetching && (
             <div className="centered-container">
@@ -138,13 +135,14 @@ class Chat extends Component {
               No messages yet! Say hi!
             </div>
           )}
-          <ChatBody messages={messages} style={this.customStyle} />
+          <ChatBody messages={messages} style={this.customStyle} messageBubbleClass={messageBubbleClass} />
           <ChatInput
             value={this.state.currentMessage}
             changeHandler={this.updateStateOnChange}
             clickHandler={this.sendMessage}
             enterKeyHandler={this.handleKeyPress}
             icon={sendIcon}
+            className={inputClass}
           />
         </div>
       </Provider>
@@ -162,17 +160,20 @@ Chat.propTypes = {
   textColor: PropTypes.string,
   sendIcon: PropTypes.string,
   loader: PropTypes.string,
-  className: PropTypes.string,
+  containerClass: PropTypes.string,
+  inputClass: PropTypes.string,
+  messageBubbleClass: PropTypes.string,
 };
 
 Chat.defaultProps = {
   className: "",
-  height: "100%",
-  width: "100%",
   themeColor: "#3cb3dd",
   textColor: "#ffffff",
   loader: spinner,
   sendIcon: sendBtn,
+  containerClass: "",
+  inputClass: "",
+  messageBubbleClass: "",
 };
 
 const connectWithStore = (store, WrappedComponent, ...args) => {

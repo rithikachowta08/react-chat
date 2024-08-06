@@ -1,7 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 html,
 body,
 #root {
   height: 100%;
+  margin: 0;
+}
+
+body {
+  padding: 20px 40px;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .App {
@@ -12,16 +23,19 @@ body,
   text-align: center;
   align-items: center;
   gap: 10px;
+  font-family: 'Roboto', sans-serif;
+
 
   .btn {
     padding: 10px;
-    background-color: #3c5a99;
+    background-color: #192586;
     color: #fff;
     border-radius: 6px;
     box-shadow: none;
     outline: none;
     cursor: pointer;
     width: 100px;
+    border: 0;
   }
 
   .chat-container {

@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { getTimeFromUnixTime, getDateFromUnixTime } from "./functions";
+import { getTimeFromUnixTime, getDateFromUnixTime } from "./date";
 
 const dateFormat = "dd/MM/yyyy";
 

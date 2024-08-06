@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Separator from '../Separator/Separator';
-import ChatMessageHeader from './ChatMessageHeader';
-import MyMessageBody from './MyMessageBody';
-import TheirMessageBody from './TheirMessageBody';
-import './ChatMessage.scss';
+import React from "react";
+import PropTypes from "prop-types";
+import Separator from "../Separator/Separator";
+import ChatMessageHeader from "./ChatMessageHeader";
+import MyMessageBody from "./MyMessageBody";
+import TheirMessageBody from "./TheirMessageBody";
+import "./ChatMessage.scss";
 
-const ChatMessage = props => (
+const ChatMessage = (props) => (
   <div className="chat-message-wrapper">
     {props.separatorDate && <Separator displayText={props.separatorDate} />}
     {props.withHeader && (
@@ -18,9 +18,16 @@ const ChatMessage = props => (
       />
     )}
     {props.fromSelf ? (
-      <MyMessageBody style={props.style} messageText={props.messageText} />
+      <MyMessageBody
+        style={props.style}
+        messageText={props.messageText}
+        className={props.messageBubbleClass}
+      />
     ) : (
-      <TheirMessageBody messageText={props.messageText} />
+      <TheirMessageBody
+        messageText={props.messageText}
+        className={props.messageBubbleClass}
+      />
     )}
   </div>
 );
@@ -34,18 +41,20 @@ ChatMessage.propTypes = {
   withHeader: PropTypes.bool,
   fromSelf: PropTypes.bool,
   timeStamp: PropTypes.string,
-  style: PropTypes.object
+  messageBubbleClass: PropTypes.string,
+  style: PropTypes.object,
 };
 
 ChatMessage.defaultProps = {
-  id: '',
-  userName: '',
-  separatorDate: '',
-  avatarUrl: '',
-  timeStamp: '',
+  id: "",
+  userName: "",
+  separatorDate: "",
+  avatarUrl: "",
+  timeStamp: "",
   withHeader: false,
   fromSelf: false,
-  style: {}
+  style: {},
+  messageBubbleClass: "",
 };
 
 export default ChatMessage;
