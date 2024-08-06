@@ -1,6 +1,6 @@
 {
   "name": "@rithikachowta08/react-chat",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "One to one React chat component built using Firebase's realtime database.",
   "main": "dist/index.js",
   "author": "Rithika Chowta",
@@ -25,7 +25,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "build": "babel src -d dist",
+    "build": "babel src -d dist && npm run copy-assets",
+    "copy-assets": "copyfiles -u 1 src/**/*.scss src/*.scss src/images/**/* dist/",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
@@ -59,6 +60,7 @@
     "@babel/core": "^7.25.2",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/preset-env": "^7.25.3",
-    "@babel/preset-react": "^7.24.7"
+    "@babel/preset-react": "^7.24.7",
+    "copyfiles": "^2.4.1"
   }
 }
