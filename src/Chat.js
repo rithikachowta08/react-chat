@@ -51,12 +51,12 @@ class Chat extends Component {
   }
 
   componentDidMount() {
-    const { currentUserId, receiver } = this.props;
+    const { currentUser, receiver } = this.props;
     // chat-room is always named by sender and receiver names arranged lexicographically
     this.chatRoom =
-      currentUserId > receiver.id
-        ? `${receiver.id}-${currentUserId}`
-        : `${currentUserId}-${receiver.id}`;
+      currentUser.id > receiver.id
+        ? `${receiver.id}-${currentUser.id}`
+        : `${currentUser.id}-${receiver.id}`;
     this.initialize();
   }
 
@@ -80,7 +80,7 @@ class Chat extends Component {
     dbRef = getDatabase(app);
     this.props.fetchChat({
       CHAT_URL: this.chatRoom,
-      currentUserId: this.props.currentUserId,
+      currentUser: this.props.currentUser,
       receiver: this.props.receiver,
     });
     this.setChatListener();
@@ -93,7 +93,7 @@ class Chat extends Component {
       const data = snapshot.val();
       this.props.updateChatState({
         snapshot: data,
-        currentUserId: this.props.currentUserId,
+        currentUser: this.props.currentUser,
         receiver: this.props.receiver,
       });
     });
@@ -104,7 +104,7 @@ class Chat extends Component {
     if (this.state.currentMessage) {
       const chatRef = ref(dbRef, this.chatRoom);
       push(chatRef, {
-        from: this.props.currentUserId,
+        from: this.props.currentUser.id,
         to: this.props.receiver.id,
         text: this.state.currentMessage,
         timestamp: getTime(new Date()) / 1000,
@@ -165,7 +165,7 @@ class Chat extends Component {
 Chat.propTypes = {
   config: PropTypes.object.isRequired,
   receiver: PropTypes.object.isRequired,
-  currentUserId: PropTypes.string.isRequired,
+  currentUser: PropTypes.object.isRequired,
   height: PropTypes.string,
   width: PropTypes.string,
   themeColor: PropTypes.string,

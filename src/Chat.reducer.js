@@ -30,7 +30,7 @@ const chat = (state = initialState, { type, payload, data }) => {
         tempState.messages = prepareMessages(
           payload,
           data.receiver,
-          data.currentUserId
+          data.currentUser
         );
       }
       tempState.isFetching = false;
@@ -48,7 +48,7 @@ const chat = (state = initialState, { type, payload, data }) => {
             payload.message,
             payload.messageId,
             data.receiver,
-            data.currentUserId
+            data.currentUser
           )
         );
       }

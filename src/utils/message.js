@@ -37,26 +37,30 @@ const setHeaderDisplay = (messages) => {
 };
 
 // Set rendering properties for the message
-const setMessageProps = (message, id, receiver, currentUserId) => {
+const setMessageProps = (message, id, receiver, currentUser) => {
   const newMessage = {};
   newMessage.id = id;
-  newMessage.fromSelf = message.from === currentUserId;
+  newMessage.fromSelf = message.from === currentUser.id;
   newMessage.messageText = message.text;
   if (message.from === receiver.id) {
     newMessage.userName = receiver.name;
   }
-  newMessage.avatarUrl = receiver.imageUrl;
+  if (newMessage.fromSelf) {
+    newMessage.avatarUrl = currentUser.imageUrl;
+  } else {
+    newMessage.avatarUrl = receiver.imageUrl;
+  }
   newMessage.unixTime = message.timestamp;
   newMessage.timeStamp = getTimeFromUnixTime(message.timestamp);
   return newMessage;
 };
 
 // Iterate through message list and set each one's properties
-const prepareMessages = (messages, receiver, currentUserId) => {
+const prepareMessages = (messages, receiver, currentUser) => {
   const preparedMessages = [];
   Object.keys(messages).forEach((id) => {
     preparedMessages.push(
-      setMessageProps(messages[id], id, receiver, currentUserId)
+      setMessageProps(messages[id], id, receiver, currentUser)
     );
   });
   return setHeaderDisplay(preparedMessages);

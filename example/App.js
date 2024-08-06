@@ -37,6 +37,8 @@ const App = () => {
   // Get receiver info based on who the current user is
   const getReceiver = () => (currentUserId === user1.id ? user2 : user1);
 
+  const getSender = () => (currentUserId === user1.id ? user1 : user2);
+
   return (
     <div className="App">
       <Chat
@@ -50,11 +52,10 @@ const App = () => {
           measurementId: process.env.REACT_APP_MEASUREMENT_ID,
           databaseURL: process.env.REACT_APP_DATABASE_URL,
         }}
-        currentUserId={currentUserId}
+        currentUser={getSender()}
         receiver={getReceiver()}
         className="chat-container"
         themeColor="#192586"
-        textColor="#fff"
         darkMode
       />
       <span>You are currently in the role of: {userRoles[currentUserId]}</span>
