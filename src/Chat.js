@@ -45,9 +45,7 @@ class Chat extends Component {
 
     this.customStyle = {
       backgroundColor: props.themeColor,
-      borderColor: `${props.themeColor} ${
-        props.themeColor
-      } transparent transparent`,
+      borderColor: `${props.themeColor} ${props.themeColor} transparent transparent`,
       color: props.textColor,
     };
   }
@@ -117,10 +115,20 @@ class Chat extends Component {
 
   render() {
     const { error, isFetching, messages } = this.props.chat;
-    const { loader, sendIcon, containerClass, inputClass, messageBubbleClass } = this.props;
+    const {
+      loader,
+      sendIcon,
+      containerClass,
+      inputClass,
+      messageBubbleClass,
+      darkMode,
+    } = this.props;
     return (
       <Provider store={store}>
-        <div className={`${containerClass} chat-section`} style={this.chatStyle}>
+        <div
+          className={`${containerClass} chat-section ${darkMode ? "dark" : ""}`}
+          style={this.chatStyle}
+        >
           {error && <div className="error">Oops! Something went wrong!</div>}
           {isFetching && (
             <div className="centered-container">
@@ -135,7 +143,11 @@ class Chat extends Component {
               No messages yet! Say hi!
             </div>
           )}
-          <ChatBody messages={messages} style={this.customStyle} messageBubbleClass={messageBubbleClass} />
+          <ChatBody
+            messages={messages}
+            style={this.customStyle}
+            messageBubbleClass={messageBubbleClass}
+          />
           <ChatInput
             value={this.state.currentMessage}
             changeHandler={this.updateStateOnChange}
@@ -163,6 +175,7 @@ Chat.propTypes = {
   containerClass: PropTypes.string,
   inputClass: PropTypes.string,
   messageBubbleClass: PropTypes.string,
+  darkMode: PropTypes.bool,
 };
 
 Chat.defaultProps = {
@@ -174,6 +187,7 @@ Chat.defaultProps = {
   containerClass: "",
   inputClass: "",
   messageBubbleClass: "",
+  darkMode: false,
 };
 
 const connectWithStore = (store, WrappedComponent, ...args) => {

@@ -68,9 +68,9 @@ A login and signup flow must already be implemented in your application. This co
 
 - Full example on Github: [Example](https://github.com/rithikachowta08/react-chat/tree/main/example).
 
-- CodeSandbox: [CodeSandbox](https://github.com/rithikachowta08/react-chat/tree/main/example).
+- CodeSandbox: [CodeSandbox](https://codesandbox.io/p/devbox/qwymgy).
 
-- Demo: [Demo](https://react-rtdb-chat.netlify.app/).
+- Demo: [Demo](https://qwymgy-5173.csb.app/).
 
 - Tutorial on how this package was implemented: [Medium article](https://medium.com/@rithikachowta/building-a-real-time-chat-application-with-react-firebase-and-redux-saga-9cbbdbc34720?postPublishedType=initial).
 

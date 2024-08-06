@@ -38,3 +38,13 @@
     }
   }
 }
+
+.chat-section.dark {
+  .hr-text {
+    background-color: #000;
+
+    &:after {
+      background-color: #000;
+    }
+  }
+}
