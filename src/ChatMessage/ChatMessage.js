@@ -9,7 +9,7 @@ import "./ChatMessage.scss";
 const ChatMessage = (props) => (
   <div className="chat-message-wrapper">
     {props.separatorDate && <Separator displayText={props.separatorDate} />}
-    {props.withHeader && (
+    {props.withHeader && !props.fromSelf && (
       <ChatMessageHeader
         fromSelf={props.fromSelf}
         avatarUrl={props.avatarUrl}
@@ -27,6 +27,14 @@ const ChatMessage = (props) => (
       <TheirMessageBody
         messageText={props.messageText}
         className={props.messageBubbleClass}
+      />
+    )}
+    {props.withHeader && props.fromSelf && (
+      <ChatMessageHeader
+        fromSelf={props.fromSelf}
+        avatarUrl={props.avatarUrl}
+        userName={props.userName}
+        timeStamp={props.timeStamp}
       />
     )}
   </div>

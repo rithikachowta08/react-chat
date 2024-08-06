@@ -5,9 +5,9 @@ import avatar from "../images/avatar.png";
 const ChatMessageHeader = (props) => {
   const getSelfHeader = () => (
     <div className="chat-header self">
-      <img src={props.avatarUrl || avatar} alt="user" />
-      <span className="small-text">you | </span>
       <span className="small-text">{props.timeStamp}</span>
+      <span className="small-text">&nbsp;|&nbsp;you&nbsp;</span>
+      <img src={props.avatarUrl || avatar} alt="user" />
     </div>
   );
 

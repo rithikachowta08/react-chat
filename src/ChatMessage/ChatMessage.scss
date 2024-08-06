@@ -36,6 +36,8 @@
   border-radius: 8px;
   background-color: $secondary-color;
   border-color: $secondary-color $secondary-color transparent transparent;
+  margin-bottom: 0.5em;
+  margin-right: 1.5em;
 
   &:after {
     top: auto;
@@ -49,13 +51,16 @@
 
 .chat-header {
   text-align: left;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
   color: $grey;
   font-size: 12px;
 }
 
 .chat-header.self {
   text-align: right;
+  width: fit-content;
+  margin-left: auto;
+  margin-bottom: 0;
 }
 
 .chat-header span {
@@ -71,4 +76,9 @@
   width: 2em;
   margin-right: 0.8em;
   box-shadow: 0 8px 19px 0 rgba(0, 0, 0, 0.1);
+}
+
+.chat-header.self img {
+  margin-left: 0.8em;
+  margin-right: 0;
 }
