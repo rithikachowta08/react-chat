@@ -1,7 +1,10 @@
 {
-  "name": "react-chat",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@rithikachowta08/react-chat",
+  "version": "1.0.0",
+  "description": "One to one React chat component built using Firebase's realtime database.",
+  "main": "dist/index.js",
+  "author": "Rithika Chowta",
+  "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -22,11 +25,17 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "babel src -d dist",
+    "prepublishOnly": "npm run build"
   },
+  "keywords": [
+    "react",
+    "realtime",
+    "component",
+    "firebase",
+    "npm",
+    "chat"
+  ],
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -46,6 +55,9 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/cli": "^7.24.8",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/preset-react": "^7.24.7"
   }
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import Chat from "./lib";
+import Chat from "../src/lib";
 import "./App.scss";
 
 // Info of participants in the chat

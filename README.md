@@ -1,4 +1,4 @@
-# React Realtime Chat
+# React Chat
 
 > One to one chat component built using Firebase's realtime database. This component can be used to intialize a chat window for a user who is logged in to your application, with another user of your application. The messages are stored and read from Firebase RTDB. A firebase config must be passed for the component to work.
 
@@ -10,7 +10,7 @@ A login and signup flow must already be implemented in your application. This co
 
 ## Installation
 
-`npm install --save react-realtime-chat`
+`npm i @rithikachowta08/react-chat`
 
 ## Usage
 
@@ -61,12 +61,14 @@ A login and signup flow must already be implemented in your application. This co
 
 ## Links and examples
 
-- Full example on Github: [Example](https://github.com/rithikachowta08/react-chat/tree/main/src).
+- Full example on Github: [Example](https://github.com/rithikachowta08/react-chat/tree/main/example).
+
+- CodeSandbox: [CodeSandbox](https://github.com/rithikachowta08/react-chat/tree/main/example).
 
 - Demo: [Demo](https://react-rtdb-chat.netlify.app/).
 
-- Tutorial on how this package was implemented : [Medium article](https://medium.com/@rithikachowta/building-a-real-time-chat-application-with-react-firebase-and-redux-saga-9cbbdbc34720?postPublishedType=initial).
+- Tutorial on how this package was implemented: [Medium article](https://medium.com/@rithikachowta/building-a-real-time-chat-application-with-react-firebase-and-redux-saga-9cbbdbc34720?postPublishedType=initial).
 
 ## License
 
-react-realtime-chat is released under [MIT License](https://opensource.org/licenses/MIT).
+react-chat is released under [MIT License](https://opensource.org/licenses/MIT).
