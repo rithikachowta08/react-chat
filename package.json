@@ -1,6 +1,6 @@
 {
   "name": "@rithikachowta08/react-chat",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "One to one React chat component built using Firebase's realtime database.",
   "main": "dist/index.js",
   "author": "Rithika Chowta",
@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/rithikachowta08/react-chat"
   },
-  "homepage": "https://qwymgy-5173.csb.app/",
+  "homepage": "https://neon-horse-6efae9.netlify.app/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
