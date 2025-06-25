@@ -34,14 +34,12 @@ A login and signup flow must already be implemented in your application. This co
   currentUser={{
     name: "Harry",
     id: "129091",
-    imageUrl:
-      "https://upload.wikimedia.org/wikipedia/en/d/d7/Harry_Potter_character_poster.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/d/d7/Harry_Potter_character_poster.jpg",
   }}
   receiver={{
     name: "Ron",
     id: "129090",
-    imageUrl:
-      "https://static.wikia.nocookie.net/the-truth-behind-aurora/images/8/85/Ron_Weasley.jpg",
+    imageUrl: "https://static.wikia.nocookie.net/the-truth-behind-aurora/images/8/85/Ron_Weasley.jpg",
   }}
   themeColor="#3C5A99"
   textColor="#fff"
@@ -53,19 +51,19 @@ A login and signup flow must already be implemented in your application. This co
 
 ## Props
 
-| Name                                     | Value                        | Description                                                                                                                                                                                                           |
-| ---------------------------------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| config                                | `object`                     | Firebase configuration info of your Firebase App. Required to access Firebase Realtime database.                                                                                    |
-| receiver                                     | `object`| An object containing `name` (string), `id` (string) and `imageUrl`(string) . This contains the information of the intended recipient of messages in the chatroom. `imageUrl` will be used as avatar of the recipient.                                                                                                                          |
-| currentUser                                | `object`| An object containing `name` (string), `id` (string) and `imageUrl`(string) . This contains the information of the current logged-in user who is initiating the chat. `imageUrl` will be used as avatar of the user.
-| themeColor                                | `string`                    | Color code that will be used as the primary color for the chat component
-| textColor                                | `string`                    | Color code that will be used for the text in the message bubbles
-| sendIcon                                | `string`                    | Image URL that will be used as the send icon in the input field
-| loader                                | `string`                    | Image URL that will be used as the loader while messages are being fetched from firebase
-| containerClass                                | `string`                    | className for chat container
-| inputClass                                | `string`                    | className for the message input element
-| messageBubbleClass                                | `string`                    | className for the message bubble component
-| darkMode                                | `boolean`                    | Boolean value to enable/disable dark mode
+| Name               | Value     | Description                                                                                                                                                                                                           |
+| ------------------ | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| config             | `object`  | Firebase configuration info of your Firebase App. Required to access Firebase Realtime database.                                                                                                                      |
+| receiver           | `object`  | An object containing `name` (string), `id` (string) and `imageUrl`(string) . This contains the information of the intended recipient of messages in the chatroom. `imageUrl` will be used as avatar of the recipient. |
+| currentUser        | `object`  | An object containing `name` (string), `id` (string) and `imageUrl`(string) . This contains the information of the current logged-in user who is initiating the chat. `imageUrl` will be used as avatar of the user.   |
+| themeColor         | `string`  | Color code that will be used as the primary color for the chat component                                                                                                                                              |
+| textColor          | `string`  | Color code that will be used for the text in the message bubbles                                                                                                                                                      |
+| sendIcon           | `string`  | Image URL that will be used as the send icon in the input field                                                                                                                                                       |
+| loader             | `string`  | Image URL that will be used as the loader while messages are being fetched from firebase                                                                                                                              |
+| containerClass     | `string`  | className for chat container                                                                                                                                                                                          |
+| inputClass         | `string`  | className for the message input element                                                                                                                                                                               |
+| messageBubbleClass | `string`  | className for the message bubble component                                                                                                                                                                            |
+| darkMode           | `boolean` | Boolean value to enable/disable dark mode                                                                                                                                                                             |
 
 <br/>
 
@@ -73,9 +71,7 @@ A login and signup flow must already be implemented in your application. This co
 
 - Full example on Github: [Example](https://github.com/rithikachowta08/react-chat/tree/main/example).
 
-- CodeSandbox: [CodeSandbox](https://codesandbox.io/p/devbox/qwymgy).
-
-- Demo: [Demo](https://qwymgy-5173.csb.app/).
+- Demo: [Demo](https://neon-horse-6efae9.netlify.app/).
 
 - Tutorial on how this package was implemented: [Medium article](https://medium.com/@rithikachowta/building-a-real-time-chat-application-with-react-firebase-and-redux-saga-9cbbdbc34720?postPublishedType=initial).
 

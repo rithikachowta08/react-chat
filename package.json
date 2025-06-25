@@ -1,6 +1,6 @@
 {
   "name": "@rithikachowta08/react-chat",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "One to one React chat component built using Firebase's realtime database.",
   "main": "dist/index.js",
   "author": "Rithika Chowta",
